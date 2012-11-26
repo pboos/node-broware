@@ -1,0 +1,16 @@
+{
+    "name"          : "broware"
+  , "description"   : "Browify your HTTP"
+  , "keywords"      : ["http", "bro"]
+  , "author"        : "Patrick Boos <mail@pboos.ch>"
+  , "repository"    : {"type": "git", "url": "git://github.com/pboos/node-broware.git"}
+  , "version"       : "0.1.0"
+  , "main"          : "index"
+  , "dependencies": {}
+  , "devDependencies": {
+      "chai":          "1.1.0"
+    , "mocha":         "1.2.2"
+    , "coffee-script": "1.3.3"
+    , "express":       "3.0.3"
+  }
+}
