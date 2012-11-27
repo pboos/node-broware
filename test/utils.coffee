@@ -41,6 +41,9 @@ class Server
   stop: ->
     @server.close()
   handleRequest: (req, res) ->
-    res.send({})
+    status = 200
+    if req.path.length > 1
+      status = parseInt(req.path.substr(1), 10)
+    res.send(status)
 
 exports.Server = Server

@@ -11,9 +11,12 @@ describe 'broware', ->
   afterEach ->
     server.stop()
 
-  it 'GET => 200 => Here you go Bro', (done) ->
-    request 'get', '/', (res) ->
-      res.statusCode.should.equal 200
+  testStatusCode = (statusCode, statusMessage, done) ->
+    request 'get', '/' + statusCode, (res) ->
+      res.statusCode.should.equal statusCode
       firstLine = res.fullResponse.split('\r\n')[0];
-      firstLine.should.equal 'HTTP/1.1 200 Here you go Bro'
+      firstLine.should.equal 'HTTP/1.1 ' + statusCode + ' ' + statusMessage
       done()
+
+  it 'GET => 200 => Here you go Bro', (done) ->
+    testStatusCode(200, 'Here you go Bro', done)
